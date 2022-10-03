@@ -17,7 +17,7 @@ def minmax func, b
 end
 
 func1 = ->(x) { (x - 1) / (x + 2) }
-func2 = ->(x) { Math.sin(x / 2 -1 ) }
+func2 = ->(x) { Math.sin(x / 2 - 1 ) }
 
 minmax func1, 0..1
 minmax func2, -1..1
