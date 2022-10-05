@@ -1,7 +1,13 @@
-eps = 10**-4
-r = gets.chomp.to_i
-exs = Math::PI * r**2
+class Prog
+  @@eps = 10**-4
 
-s = (1..10000).to_a.collect { |x| r**2 * x * Math.sin(2 * Math::PI / x) / 2 }.find { |y| exs - y < eps }
+  def initialize el1
+    @r = el1
+  end
 
-puts s
+  def exec
+    exs = Math::PI * @r**2
+
+    puts (1..100000).to_a.collect { |x| @r**2 * x * Math.sin(2 * Math::PI / x) / 2 }.find { |y| exs - y < @@eps }
+  end
+end
