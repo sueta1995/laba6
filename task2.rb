@@ -2,10 +2,9 @@
 
 # main class
 class Prog
-  @eps = 10**-4
-
   def initialize(el1)
     @r = el1
+    @eps = 10**-4
   end
 
   def exec
