@@ -5,7 +5,7 @@ class Prog
   def initialize(el1)
     @r = el1
     @eps = 10.0**-4
-    @s = 1
+    @s = 0
     @n = 1
   end
 
@@ -17,6 +17,6 @@ class Prog
       @n += 1
     end
 
-    puts @s
+    @s
   end
 end

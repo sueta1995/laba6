@@ -10,6 +10,6 @@ class Prog
   def exec
     exs = Math::PI * @r**2
 
-    puts((1..100_000).to_a.collect { |x| @r**2 * x * Math.sin(2 * Math::PI / x) / 2 }.find { |y| exs - y < @eps })
+    (1..100_000).to_a.collect { |x| @r**2 * x * Math.sin(2 * Math::PI / x) / 2 }.find { |y| exs - y < @eps }
   end
 end
