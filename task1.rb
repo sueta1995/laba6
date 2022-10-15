@@ -1,20 +1,23 @@
-class Prog
-  @@eps = 10.0**-4
-  @@s = 1
-  @@n = 1
+# frozen_string_literal: true
 
-  def initialize el1
+# main class
+class Prog
+  @eps = 10.0**-4
+  @s = 1
+  @n = 1
+
+  def initialize(el1)
     @r = el1
   end
 
-  def exec 
+  def exec
     exs = Math::PI * @r**2
 
-    while exs - @@s > @@eps do
-      @@s = @r**2 * @@n * Math.sin(2 * Math::PI / @@n) / 2
-      @@n += 1
+    while exs - @s > @eps
+      @s = @r**2 * @n * Math.sin(2 * Math::PI / @n) / 2
+      @n += 1
     end
 
-    puts @@s
+    puts @s
   end
 end

@@ -1,22 +1,20 @@
+# frozen_string_literal: true
+
+# main class
 class Prog
   def initialize
-    @min, @max = 1000000, -1000000
+    @min = 1_000_000
+    @max = -1_000_000
   end
 
-  def minmax b
-    b.step(0.01).each do |a|
+  def minmax(elem)
+    elem.step(0.01).each do |a|
       temp = yield a.to_f
 
-      if temp > @max
-        @max = temp
-      end
-
-      if temp < @min
-        @min = temp
-      end
+      @max = temp if temp > @max
+      @min = temp if temp < @min
     end
 
     puts @min, @max
-	end
+  end
 end
-
