@@ -15,6 +15,6 @@ class Prog
       @min = temp if temp < @min
     end
 
-    puts @min, @max
+    [@max.round(3), @min.round(3)]
   end
 end
